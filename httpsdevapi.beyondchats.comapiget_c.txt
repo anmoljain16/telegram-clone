@@ -1,0 +1,407 @@
+https://devapi.beyondchats.com/api/get_chat_messages?chat_id=3888 
+
+{
+"status": "success",
+"status_code": 200,
+"message": "User messages fetched successfully!",
+"data": [
+{
+"id": 14022,
+"sender_id": 1,
+"role_id": 9,
+"message": "Hi there! Welcome to BeyondChats\nWhat brings you here today?\nAsk me anything about BeyondChats",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-04T09:41:48.000000Z",
+"updated_at": "2024-07-04T09:41:48.000000Z",
+"sender": {
+"id": 1,
+"name": "BeyondChat",
+"email": "contact@beyondchat.com",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": null,
+"updated_at": "2023-04-26T12:43:24.000000Z",
+"device": null,
+"browser": null,
+"os": null,
+"city": null,
+"country": null
+}
+},
+{
+"id": 14023,
+"sender_id": 3828,
+"role_id": 4,
+"message": "hi",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-04T09:41:48.000000Z",
+"updated_at": "2024-07-04T09:41:48.000000Z",
+"sender": {
+"id": 3828,
+"name": "Shone Jogi",
+"email": "asdfaefsdfgqwaeg@beyondexams.orgfasd",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-04T09:41:23.000000Z",
+"updated_at": "2024-07-04T09:41:23.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 14024,
+"sender_id": 1,
+"role_id": 9,
+"message": "Hello! \nHow can I assist you today?",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-04T09:41:50.000000Z",
+"updated_at": "2024-07-04T09:41:50.000000Z",
+"sender": {
+"id": 1,
+"name": "BeyondChat",
+"email": "contact@beyondchat.com",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": null,
+"updated_at": "2023-04-26T12:43:24.000000Z",
+"device": null,
+"browser": null,
+"os": null,
+"city": null,
+"country": null
+}
+},
+{
+"id": 14087,
+"sender_id": 1,
+"role_id": 9,
+"message": "Hi there! Welcome to BeyondChats\nWhat brings you here today?\nAsk me anything about BeyondChats",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-10T07:33:27.000000Z",
+"updated_at": "2024-07-10T07:33:27.000000Z",
+"sender": {
+"id": 1,
+"name": "BeyondChat",
+"email": "contact@beyondchat.com",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": null,
+"updated_at": "2023-04-26T12:43:24.000000Z",
+"device": null,
+"browser": null,
+"os": null,
+"city": null,
+"country": null
+}
+},
+{
+"id": 14088,
+"sender_id": 3828,
+"role_id": 4,
+"message": "cost",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-10T07:33:27.000000Z",
+"updated_at": "2024-07-10T07:33:27.000000Z",
+"sender": {
+"id": 3828,
+"name": "Shone Jogi",
+"email": "asdfaefsdfgqwaeg@beyondexams.orgfasd",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-04T09:41:23.000000Z",
+"updated_at": "2024-07-04T09:41:23.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 14089,
+"sender_id": 1,
+"role_id": 9,
+"message": "Our costs vary depending on the service you require. \nFor example, an online appraisal via video call is £399, while an express or urgent appraisal is £500 [[1]](https://medicalappraisals.org.uk/cost). \nAdditionally, routine appraisal is priced at £399 and express appraisal at £500 [[1]](https://medicalappraisals.org.uk/cost). \nFeel free to visit our website for further details on pricing. \nHow can I assist you further with this information?",
+"unanswered": 0,
+"vote": null,
+"chat_id": 3888,
+"action_id": null,
+"is_corrected": 0,
+"created_at": "2024-07-10T07:33:37.000000Z",
+"updated_at": "2024-07-10T07:33:37.000000Z",
+"sender": {
+"id": 1,
+"name": "BeyondChat",
+"email": "contact@beyondchat.com",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": null,
+"updated_at": "2023-04-26T12:43:24.000000Z",
+"device": null,
+"browser": null,
+"os": null,
+"city": null,
+"country": null
+}
+},
+
+
+
+https://devapi.beyondchats.com/api/get_all_chats?page=1
+
+{
+"status": "success",
+"status_code": 200,
+"message": "Chats fetched successfully!",
+"data": {
+"current_page": 1,
+"data": [
+{
+"id": 3888,
+"created_by": 3828,
+"org_id": 10,
+"status": "ended",
+"lead_score": 0,
+"created_at": "2024-07-04T09:41:23.000000Z",
+"updated_at": "2024-07-12T11:21:08.000000Z",
+"msg_count": 45,
+"creator": {
+"id": 3828,
+"name": "Shone Jogi",
+"email": "asdfaefsdfgqwaeg@beyondexams.orgfasd",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-04T09:41:23.000000Z",
+"updated_at": "2024-07-04T09:41:23.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3925,
+"created_by": 3862,
+"org_id": 10,
+"status": "ongoing",
+"lead_score": 0,
+"created_at": "2024-07-11T13:58:54.000000Z",
+"updated_at": "2024-07-12T06:11:35.000000Z",
+"msg_count": 18,
+"creator": {
+"id": 3862,
+"name": "Shone Jogi",
+"email": "shonejogi2000@gmail.comsdf",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-11T13:58:54.000000Z",
+"updated_at": "2024-07-11T13:58:54.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3912,
+"created_by": 3853,
+"org_id": 10,
+"status": "ended",
+"lead_score": 0,
+"created_at": "2024-07-08T08:20:59.000000Z",
+"updated_at": "2024-07-11T10:20:23.000000Z",
+"msg_count": 24,
+"creator": {
+"id": 3853,
+"name": "Siddhant Jain",
+"email": "siddhantjain209@gmail.com",
+"phone": "9575602399",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-08T08:20:59.000000Z",
+"updated_at": "2024-07-08T09:35:57.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "GNU/Linux",
+"city": "Indore",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3923,
+"created_by": 3860,
+"org_id": 10,
+"status": "ongoing",
+"lead_score": 0,
+"created_at": "2024-07-10T19:36:25.000000Z",
+"updated_at": "2024-07-10T19:37:23.000000Z",
+"msg_count": 5,
+"creator": {
+"id": 3860,
+"name": "Shone Jogi",
+"email": "shonejogsdfi2000@gmail.com",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-10T19:36:25.000000Z",
+"updated_at": "2024-07-10T19:36:25.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3633,
+"created_by": 3562,
+"org_id": 10,
+"status": "ongoing",
+"lead_score": 0,
+"created_at": "2024-06-30T06:45:55.000000Z",
+"updated_at": "2024-07-10T18:53:16.000000Z",
+"msg_count": 18,
+"creator": {
+"id": 3562,
+"name": "Shone Jogi",
+"email": "shonejogisadfasfdf2000@gmail.com",
+"phone": "9130907456",
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-06-30T06:45:55.000000Z",
+"updated_at": "2024-06-30T06:45:55.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3889,
+"created_by": 3829,
+"org_id": 10,
+"status": "ongoing",
+"lead_score": 0,
+"created_at": "2024-07-04T10:19:02.000000Z",
+"updated_at": "2024-07-04T10:19:11.000000Z",
+"msg_count": 2,
+"creator": {
+"id": 3829,
+"name": null,
+"email": "182.69.180.192",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-07-04T10:19:02.000000Z",
+"updated_at": "2024-07-04T10:19:02.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
+{
+"id": 3621,
+"created_by": 3555,
+"org_id": 10,
+"status": "ongoing",
+"lead_score": 0,
+"created_at": "2024-06-12T09:46:13.000000Z",
+"updated_at": "2024-07-01T09:38:21.000000Z",
+"msg_count": 163,
+"creator": {
+"id": 3555,
+"name": null,
+"email": "182.69.183.249",
+"phone": null,
+"email_verified_at": null,
+"password_updated": 0,
+"created_at": "2024-06-12T09:46:13.000000Z",
+"updated_at": "2024-06-12T09:46:13.000000Z",
+"device": "desktop",
+"browser": "Chrome",
+"os": "Mac",
+"city": "Delhi",
+"country": {
+"id": 103,
+"name": "India",
+"code": "IN",
+"phone_code": "91"
+}
+}
+},
