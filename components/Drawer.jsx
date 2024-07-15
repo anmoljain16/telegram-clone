@@ -14,19 +14,34 @@ const Drawer = ({ isOpen, onClose, onToggleDarkMode, darkMode }) => {
             <div className="fixed inset-0 bg-black opacity-0" onClick={onClose}></div>
 
             {/* Drawer Content */}
-            <div className={`relative w-64 bg-white dark:bg-gray-800 p-4 h-full`}>
+            <div className={`relative w-64 bg-white dark:bg-slate-800 p-4 h-full`}>
                 {/*<button className="mb-4 text-white" onClick={onToggleDarkMode}>*/}
                 {/*    {darkMode ? 'Light Mode' : 'Dark Mode'}*/}
                 {/*</button>*/}
                 <div className={`p-4 flex justify-between items-center ${darkMode ? 'bg-telegram-dark-bg-secondary' : 'bg-telegram-bg-darker'}`}>
                     <h1 className="text-2xl font-bold text-white"></h1>
-                    <button
-                        onClick={onToggleDarkMode}
+                    <div
+
                         className={`px-4 py-2 rounded ${darkMode ? 'bg-telegram-bg-darker text-white' : 'bg-telegram-bg-main text-telegram-bg-darker'}`}
                     >
-                        {darkMode ? 'Light Mode' : 'Dark Mode'}
-                        <MaterialUISwitch/>
-                    </button>
+                        <FormGroup>
+                            <FormControlLabel onClick={onToggleDarkMode}
+                                control={<MaterialUISwitch/>}
+                                              InputProps={{
+                                                  style: {
+                                                      backgroundColor: darkMode ? '#475569' : '#e0e0e0',
+                                                      color: darkMode ? '#fff' : '#000',
+                                                      borderRadius: '25px',
+                                                      height: '40px',
+                                                      border: 'none',
+                                                  },
+                                                  disableUnderline: true,
+                                              }}
+
+
+                            />
+                        </FormGroup>
+                    </div>
                 </div>
             </div>
         </div>

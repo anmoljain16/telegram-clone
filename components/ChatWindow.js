@@ -38,8 +38,8 @@ const ChatWindow = ({ chatId, darkMode, creator, onBack }) => {
     }
 
     return (
-        <div ref={chatContainerRef} className={`flex-1 p-4 overflow-y-auto h-screen ${darkMode ? 'bg-telegram-dark-bg-main' : 'bg-telegram-bg-main'}`}>
-            <div className="sticky top-0 bg-opacity-90 bg-inherit z-10 flex items-center justify-between p-4 border-b-2 border-black/75">
+        <div ref={chatContainerRef} className={`flex-1  md:overflow-y-auto max-[400px]:absolute  h-screen ${darkMode ? 'bg-slate-900' : 'bg-gray-50'} flex-1   inset-0 z-10  ${(chatId && messages.length>0 ) ? 'translate-x-0' : '-translate-x-full'}  duration-100 ease-in-out`}>
+            <div className={`sticky top-0 mb-2 bg-inherit z-20 flex items-center justify-between p-4 border-b-1 border-black ${darkMode ? 'bg-slate-700' : 'bg-telegram-bg-main'}`}>
                 <button onClick={onBack} className="sm:hidden">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>
@@ -50,7 +50,7 @@ const ChatWindow = ({ chatId, darkMode, creator, onBack }) => {
                 </h2>
                 <div className="sm:hidden"></div>
             </div>
-            <div className="flex flex-col space-y-4 mb-24">
+            <div className="flex flex-col space-y-4 mx-2  mb-24">
                 {messages.map(message => (
                     <div key={message.id} className={`p-2 rounded-lg max-w-[70%] ${
                         message.sender_id === 1

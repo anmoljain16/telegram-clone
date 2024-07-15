@@ -8,6 +8,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const ChatList = ({ onSelectChat, darkMode }) => {
     const [chats, setChats] = useState([]);
@@ -60,49 +62,90 @@ const ChatList = ({ onSelectChat, darkMode }) => {
         return <div>{error}</div>;
     }
 
-    return (
-        <div className={`flex flex-col w-full sm:w-1/3 border-r ${darkMode ? 'bg-telegram-dark-bg-main border-gray-700' : 'bg-telegram-bg-main border-gray-300'} overflow-y-auto h-screen`}>
-            <div className={`sticky top-0 p-4 z-10 ${darkMode ? 'bg-telegram-dark-bg-secondary text-telegram-dark-fg-main' : 'bg-gray-50 text-white'}`}>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className={`w-full p-2 rounded-full focus:outline-none placeholder-black placeholder:font-light ${darkMode ? 'bg-telegram-dark-bg-main text-telegram-dark-fg-main' : 'bg-gray-300 text-gray-900'}`}
-                />
-            </div>
-            <List sx={{ width: '100%', bgcolor: darkMode ? 'background.paper' : 'background.paper' }}>
-                {filteredChats.map((chat, index) => (
-                    <React.Fragment key={chat.id}>
-                        <ListItem alignItems="flex-start" onClick={() => onSelectChat({
-                            chatid: chat.id,
-                            creator: chat.creator,
-                        })} className={`cursor-pointer ${darkMode ? 'hover:bg-gray-500' : 'hover:bg-gray-300'} transition-colors duration-200`}>
-                            <ListItemAvatar>
-                                    <Avatar alt={chat.creator.name || "Unknown"} src={chat.creator.avatarUrl || "/static/images/avatar/default.jpg"} />
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary={chat.creator.name || "Unknown"}
-                                secondary={
-                                    <React.Fragment>
-                                        <Typography
-                                            sx={{ display: 'inline' }}
-                                            component="span"
-                                            variant="body2"
-                                            color="text.primary"
-                                        >
+    const theme = createTheme({
+        palette: {
+            mode: darkMode ? 'dark' : 'light',
+        },
+    });
 
-                                        </Typography>
-                                        {`${chat.lastMessage}`}
-                                    </React.Fragment>
-                                }
-                            />
-                        </ListItem>
-                        {index < filteredChats.length - 1 && <Divider variant="inset" component="li" />}
-                    </React.Fragment>
-                ))}
-            </List>
-        </div>
+    return (
+        <ThemeProvider theme={theme}>
+            <div className={`flex flex-col w-full sm:w-1/3 border-r ${darkMode ? 'bg-telegram-dark-bg-secondary border-gray-700' : 'bg-telegram-bg-main border-gray-300'}
+             overflow-y-auto h-screen [&::-webkit-scrollbar]:[width:4px] [&::-webkit-scrollbar-thumb]:bg-slate-500 [&::-webkit-scrollbar]:bg-slate-600 [&::-webkit-scrollbar-thumb]:rounded-full`}>
+                <div className={`sticky top-0 p-4 z-10 ${darkMode ? 'bg-telegram-dark-bg-secondary text-telegram-dark-fg-main' : 'bg-gray-50 text-black'}`}>
+                    <TextField
+                        variant="outlined"
+                        fullWidth
+                        placeholder="Search"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        InputProps={{
+                            style: {
+                                backgroundColor: darkMode ? '#475569' : '#e0e0e0',
+                                color: darkMode ? '#fff' : '#000',
+                                borderRadius: '25px',
+                                height: '40px',
+                                border: 'none',
+                            },
+                            disableUnderline: true,
+                        }}
+                        sx={{
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                        }}
+                    />
+
+
+                </div>
+                <List sx={{ width: '100%' }}
+                      InputProps={{
+                    style: {
+                        backgroundColor: darkMode ? '#1e293b' : '#e0e0e0',
+                        color: darkMode ? '#fff' : '#000',
+
+                    },
+                    disableUnderline: true,
+                }}>
+                    {filteredChats.map((chat, index) => (
+                        <React.Fragment key={chat.id}>
+                            <ListItem alignItems="flex-start" onClick={() => onSelectChat({
+                                chatid: chat.id,
+                                creator: chat.creator,
+                            })} className={`cursor-pointer ${darkMode ? 'hover:bg-slate-600 bg-telegram-dark-bg-secondary' : 'hover:bg-gray-300'} transition-colors duration-200`}>
+                                <ListItemAvatar>
+                                    <Avatar alt={chat.creator.name || "Unknown"} src={chat.creator.avatarUrl || "/static/images/avatar/default.jpg"} >
+
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText
+                                    primary={chat.creator.name || "Unknown"}
+                                    secondary={
+                                        <React.Fragment>
+                                            <Typography
+                                                sx={{ display: 'inline' }}
+                                                component="span"
+                                                variant="body2"
+                                                color="text.primary"
+                                            >
+                                            </Typography>
+                                            {`${chat.lastMessage}`}
+                                        </React.Fragment>
+                                    }
+                                />
+                            </ListItem>
+                            {index < filteredChats.length - 1 && <Divider variant="inset" component="li" />}
+                        </React.Fragment>
+                    ))}
+                </List>
+            </div>
+        </ThemeProvider>
     );
 };
 
