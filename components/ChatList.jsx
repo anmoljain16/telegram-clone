@@ -35,7 +35,8 @@ const ChatList = ({ onSelectChat, darkMode }) => {
 
                     setChats(updatedChats);
                 } else {
-                    throw new Error('Invalid chat data');
+                    return <div>Error fetching chats</div>;
+                    // throw new Error('Invalid chat data');
                 }
             } catch (error) {
                 setError('Error fetching chats');
@@ -75,9 +76,11 @@ const ChatList = ({ onSelectChat, darkMode }) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className={`flex flex-col w-full sm:w-1/3 border-r ${darkMode ? 'bg-telegram-dark-bg-secondary border-gray-700' : 'bg-telegram-bg-main border-gray-300'}
-             overflow-y-auto h-screen [&::-webkit-scrollbar]:[width:4px] [&::-webkit-scrollbar-thumb]:bg-slate-500 [&::-webkit-scrollbar]:bg-slate-600 [&::-webkit-scrollbar-thumb]:rounded-full`}>
-                <div className={`sticky top-0 p-4 z-10 ${darkMode ? 'bg-telegram-dark-bg-secondary text-telegram-dark-fg-main' : 'bg-gray-50 text-black'}`}>
+            <div
+                className={`flex flex-col w-full sm:w-1/3 border-r ${darkMode ? 'bg-telegram-dark-bg-secondary border-gray-700' : 'bg-telegram-bg-main border-gray-300'}
+             overflow-y-auto  [&::-webkit-scrollbar]:[width:4px] [&::-webkit-scrollbar-thumb]:bg-slate-500 [&::-webkit-scrollbar]:bg-slate-600 [&::-webkit-scrollbar-thumb]:rounded-full`}>
+                <div
+                    className={`sticky top-0 p-4 z-10 ${darkMode ? 'bg-telegram-dark-bg-secondary text-telegram-dark-fg-main' : 'bg-gray-50 text-black'}`}>
                     <TextField
                         variant="outlined"
                         fullWidth
@@ -109,43 +112,45 @@ const ChatList = ({ onSelectChat, darkMode }) => {
 
 
                 </div>
-                <List sx={{ width: '100%' }}
+                <List sx={{width: '100%'}}
                       InputProps={{
-                    style: {
-                        backgroundColor: darkMode ? '#1e293b' : '#e0e0e0',
-                        color: darkMode ? '#fff' : '#000',
+                          style: {
+                              backgroundColor: darkMode ? '#1e293b' : '#e0e0e0',
+                              color: darkMode ? '#fff' : '#000',
 
-                    },
-                    disableUnderline: true,
-                }}>
+                          },
+                          disableUnderline: true,
+                      }}>
                     {filteredChats.map((chat, index) => (
                         <React.Fragment key={chat.id}>
                             <ListItem alignItems="flex-start" onClick={() => onSelectChat({
                                 chatid: chat.id,
                                 creator: chat.creator,
-                            })} className={`cursor-pointer ${darkMode ? 'hover:bg-slate-600 bg-telegram-dark-bg-secondary' : 'hover:bg-gray-300'} transition-colors duration-200`}>
+                            })}
+                                      className={`cursor-pointer ${darkMode ? 'hover:bg-slate-600 bg-telegram-dark-bg-secondary' : 'hover:bg-gray-300'} transition-colors duration-200`}>
                                 <ListItemAvatar>
-                                    <Avatar alt={chat.creator.name || "Unknown"} src={chat.creator.avatarUrl || "/static/images/avatar/default.jpg"} >
+                                    <Avatar alt={chat.creator.name || "Unknown"}
+                                            src={chat.creator.avatarUrl || "/static/images/avatar/default.jpg"}>
 
                                     </Avatar>
                                 </ListItemAvatar>
                                 <ListItemText
                                     primary={
-                                    <React.Fragment>
-                                        <Typography
-                                            sx={{ display: 'inline' }}
-                                            component="span"
-                                            variant="body1"
-                                            color="text.primary"
-                                        >
-                                            {chat.creator.name || "Unknown"}
-                                        </Typography>
-                                    </React.Fragment>
+                                        <React.Fragment>
+                                            <Typography
+                                                sx={{display: 'inline'}}
+                                                component="span"
+                                                variant="body1"
+                                                color="text.primary"
+                                            >
+                                                {chat.creator.name || "Unknown"}
+                                            </Typography>
+                                        </React.Fragment>
                                     }
                                     secondary={
                                         <React.Fragment>
                                             <Typography
-                                                sx={{ display: 'inline' }}
+                                                sx={{display: 'inline'}}
                                                 component="span"
                                                 variant="body2"
                                                 color="text.secondary"
@@ -156,7 +161,7 @@ const ChatList = ({ onSelectChat, darkMode }) => {
                                     }
                                 />
                             </ListItem>
-                            {index < filteredChats.length - 1 && <Divider variant="inset" component="li" />}
+                            {index < filteredChats.length - 1 && <Divider variant="inset" component="li"/>}
                         </React.Fragment>
                     ))}
                 </List>
