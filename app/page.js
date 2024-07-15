@@ -16,7 +16,7 @@ const Home = () => {
     const onBack = () => setSelectedChatId(null);
 
     return (
-        <div className={`flex flex-row h-screen ${darkMode ? 'dark' : ''}`}>
+        <div className={`flex flex-row max-[400px]:flex-col h-screen ${darkMode ? 'dark' : ''}`}>
             <div className={`flex items-start justify-between border-b ${darkMode ? 'bg-slate-800 text-white border-gray-700' : 'bg-slate-700 text-slate-400 border-gray-300'}`} >
                 <button className="m-4" onClick={toggleDrawer}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
@@ -28,7 +28,7 @@ const Home = () => {
                 </button>
                 <div className="sm:hidden"></div>
             </div>
-            <div className="flex flex-1 overflow-hidden">
+            <div className="flex flex-1  overflow-hidden">
                 <Drawer isOpen={isDrawerOpen} onClose={toggleDrawer} onToggleDarkMode={toggleDarkMode}
                         darkMode={darkMode}/>
 
