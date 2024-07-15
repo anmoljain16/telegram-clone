@@ -65,6 +65,11 @@ const ChatList = ({ onSelectChat, darkMode }) => {
     const theme = createTheme({
         palette: {
             mode: darkMode ? 'dark' : 'light',
+            text: {
+                primary: darkMode ? '#fff' : '#000',
+                secondary: darkMode ? '#cfebff' : '#043d83',
+            },
+
         },
     });
 
@@ -125,14 +130,25 @@ const ChatList = ({ onSelectChat, darkMode }) => {
                                     </Avatar>
                                 </ListItemAvatar>
                                 <ListItemText
-                                    primary={chat.creator.name || "Unknown"}
+                                    primary={
+                                    <React.Fragment>
+                                        <Typography
+                                            sx={{ display: 'inline' }}
+                                            component="span"
+                                            variant="body1"
+                                            color="text.primary"
+                                        >
+                                            {chat.creator.name || "Unknown"}
+                                        </Typography>
+                                    </React.Fragment>
+                                    }
                                     secondary={
                                         <React.Fragment>
                                             <Typography
                                                 sx={{ display: 'inline' }}
                                                 component="span"
                                                 variant="body2"
-                                                color="text.primary"
+                                                color="text.secondary"
                                             >
                                             </Typography>
                                             {`${chat.lastMessage}`}
