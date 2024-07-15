@@ -3,7 +3,6 @@ import { useState } from 'react';
 import ChatList from '../components/ChatList';
 import ChatWindow from '../components/ChatWindow';
 import Drawer from '../components/Drawer';
-import Slide from "@mui/material/Slide";
 
 
 const Home = () => {
